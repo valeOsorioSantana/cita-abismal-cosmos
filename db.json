@@ -45,6 +45,17 @@
       "email": "carlitos@gmail.com",
       "password": "123456",
       "favoritos": []
+    },
+    {
+      "nombre": "Mari",
+      "email": "ximenadelgadom07@gmail.com",
+      "password": "123456",
+      "favoritos": [
+        3,
+        112,
+        4
+      ],
+      "id": 1752361993331
     }
   ]
 }

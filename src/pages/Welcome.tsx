@@ -51,19 +51,20 @@ export default function Welcome() {
             </div>
             <div className="text-center space-y-2">
               <div className="text-2xl">🔮</div>
-              <h3 className="font-serif text-lg text-mystic-purple">Filosofía</h3>
+              <h3 className="font-serif text-lg text-mystic-gold">Filosofía</h3>
               <p className="text-sm text-muted-foreground">
                 Reflexiones profundas del ser
               </p>
             </div>
             <div className="text-center space-y-2">
               <div className="text-2xl">✨</div>
-              <h3 className="font-serif text-lg text-mystic-indigo">Espiritualidad</h3>
+              <h3 className="font-serif text-lg text-mystic-gold">Espiritualidad</h3>
               <p className="text-sm text-muted-foreground">
                 Conexión con lo trascendente
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
