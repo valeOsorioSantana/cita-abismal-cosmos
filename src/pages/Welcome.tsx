@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { cn } from '@/lib/utils';
+import { BookOpen, 	Eye, Sparkles } from "lucide-react";
+
 
 export default function Welcome() {
   return (
@@ -43,21 +45,28 @@ export default function Welcome() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center space-y-2">
-              <div className="text-2xl">📚</div>
+              <div className="flex justify-center">
+                <BookOpen className="w-8 h-8 text-mystic-gold" />
+              </div>
               <h3 className="font-serif text-lg text-mystic-gold">Literatura</h3>
               <p className="text-sm text-muted-foreground">
                 Palabras que trascienden el tiempo
               </p>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-2xl">🔮</div>
+<div className="flex justify-center">
+  <	Eye className="w-8 h-8 text-mystic-gold" />
+</div>
+
               <h3 className="font-serif text-lg text-mystic-gold">Filosofía</h3>
               <p className="text-sm text-muted-foreground">
                 Reflexiones profundas del ser
               </p>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-2xl">✨</div>
+<div className="flex justify-center">
+  <Sparkles className="w-8 h-8 text-mystic-gold" />
+</div>
               <h3 className="font-serif text-lg text-mystic-gold">Espiritualidad</h3>
               <p className="text-sm text-muted-foreground">
                 Conexión con lo trascendente
