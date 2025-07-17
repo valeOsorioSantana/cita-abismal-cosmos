@@ -56,6 +56,17 @@
         4
       ],
       "id": 1752361993331
+    },
+    {
+      "nombre": "emilia",
+      "email": "emilia@ejemplo.com",
+      "password": "123456",
+      "favoritos": [
+        83,
+        22,
+        50
+      ],
+      "id": 1752525454857
     }
   ]
 }
