@@ -67,6 +67,15 @@
         50
       ],
       "id": 1752525454857
+    },
+    {
+      "nombre": "vale",
+      "email": "valeriaosoriosantana@gmail.com",
+      "password": "vale123",
+      "favoritos": [
+        39
+      ],
+      "id": 1752733922096
     }
   ]
 }
