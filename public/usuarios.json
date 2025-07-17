@@ -1,9 +1,0 @@
-[
-  {
-    "id": 1,
-    "nombre": "Usuario Demo",
-    "email": "demo@citas.com",
-    "password": "123456",
-    "favoritos": [1, 5, 9]
-  }
-]

@@ -67,7 +67,7 @@ export default function Login() {
               placeholder="tu@email.com"
             />
           </div>
-          
+
           <div className="space-y-2">
             <Label htmlFor="password">Contraseña</Label>
             <Input
@@ -87,8 +87,8 @@ export default function Login() {
             </div>
           )}
 
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             disabled={isLoading}
             className={cn(
               "w-full bg-gradient-mystic hover:opacity-90",
@@ -98,20 +98,15 @@ export default function Login() {
             {isLoading ? 'Ingresando...' : 'Iniciar Sesión'}
           </Button>
 
-          <div className="text-center text-sm text-muted-foreground bg-muted/20 p-4 rounded-lg">
-            <strong>Usuario demo:</strong><br />
-            Email: demo@citas.com<br />
-            Contraseña: 123456
-          </div>
-        </form>
-
-        <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-center text-muted-foreground">
             ¿No tienes cuenta?{' '}
             <Link to="/registro" className="text-mystic-purple hover:text-mystic-gold transition-colors">
               Regístrate aquí
             </Link>
           </p>
+        </form>
+
+        <div className="mt-8 text-center">
           <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors mt-2 block">
             ← Volver al inicio
           </Link>

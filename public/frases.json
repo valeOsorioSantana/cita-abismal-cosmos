@@ -1,90 +1,691 @@
-[
+
+  [
   {
     "id": 1,
+    "texto": "La mente humana es un laberinto que ni el mejor detective puede resolver.",
+    "autor": "Edogawa Rampo",
+    "tema": "misterio"
+  },
+  {
+    "id": 2,
+    "texto": "Quiero morir… pero también quiero vivir intensamente.",
+    "autor": "Osamu Dazai",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 3,
+    "texto": "El viaje sagrado es una ilusión tejida por el tiempo mismo.",
+    "autor": "Genshin Impact",
+    "tema": "realidad"
+  },
+  {
+    "id": 4,
+    "texto": "Amélie miraba el mundo como si fuera una sinfonía de secretos.",
+    "autor": "Otros",
+    "tema": "fantasía"
+  },
+  {
+    "id": 5,
+    "texto": "El ser humano es una contradicción viviente.",
+    "autor": "Osamu Dazai",
+    "tema": "identidad"
+  },
+  {
+    "id": 6,
+    "texto": "La guerra me enseñó que vivir es ya una forma de resistencia.",
+    "autor": "Ango Sakaguchi",
+    "tema": "supervivencia"
+  },
+  {
+    "id": 7,
+    "texto": "La guerra me enseñó que vivir es ya una forma de resistencia.",
+    "autor": "Ango Sakaguchi",
+    "tema": "supervivencia"
+  },
+  {
+    "id": 8,
+    "texto": "Skirk dijo: bajo el océano no hay lágrimas, solo voluntad.",
+    "autor": "Genshin Impact",
+    "tema": "destino"
+  },
+  {
+    "id": 9,
+    "texto": "Incluso el vino más fuerte se evapora bajo el sol del odio.",
+    "autor": "Chuuya Nakahara",
+    "tema": "pasión"
+  },
+  {
+    "id": 10,
+    "texto": "Los Hijos del Sol son aquellos que portan luz en medio del abismo.",
+    "autor": "Genshin Impact",
+    "tema": "mitología"
+  },
+  {
+    "id": 11,
+    "texto": "Mi único talento es el de fracasar sin cesar.",
+    "autor": "Osamu Dazai",
+    "tema": "depresión"
+  },
+  {
+    "id": 12,
+    "texto": "Solo entre ruinas nace el arte verdadero.",
+    "autor": "Ango Sakaguchi",
+    "tema": "decadencia"
+  },
+  {
+    "id": 13,
+    "texto": "Toda historia tiene un abismo. Solo algunos personajes deciden saltar.",
+    "autor": "Otros",
+    "tema": "narrativa"
+  },
+  {
+    "id": 14,
+    "texto": "La mente humana es un laberinto que ni el mejor detective puede resolver.",
+    "autor": "Edogawa Rampo",
+    "tema": "misterio"
+  },
+  {
+    "id": 15,
+    "texto": "La guerra me enseñó que vivir es ya una forma de resistencia.",
+    "autor": "Ango Sakaguchi",
+    "tema": "supervivencia"
+  },
+  {
+    "id": 16,
+    "texto": "Solo entre ruinas nace el arte verdadero.",
+    "autor": "Ango Sakaguchi",
+    "tema": "decadencia"
+  },
+  {
+    "id": 17,
+    "texto": "¿Qué es un sueño sino otra forma de existencia?",
+    "autor": "Otros",
+    "tema": "filosofía"
+  },
+  {
+    "id": 18,
+    "texto": "La guerra me enseñó que vivir es ya una forma de resistencia.",
+    "autor": "Ango Sakaguchi",
+    "tema": "supervivencia"
+  },
+  {
+    "id": 19,
+    "texto": "El sufrimiento es la única causa de la conciencia.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "filosofía"
+  },
+  {
+    "id": 20,
+    "texto": "Solo entre ruinas nace el arte verdadero.",
+    "autor": "Ango Sakaguchi",
+    "tema": "decadencia"
+  },
+  {
+    "id": 21,
+    "texto": "Nada hay más corrosivo que el silencio entre dos que se conocen demasiado.",
+    "autor": "Amélie Nothomb",
+    "tema": "relaciones"
+  },
+  {
+    "id": 22,
+    "texto": "Caer una y otra vez es una danza que solo los necios entienden.",
+    "autor": "Chuuya Nakahara",
+    "tema": "rebeldía"
+  },
+  {
+    "id": 23,
+    "texto": "Mi existencia es mi mayor enemigo y también mi único aliado.",
+    "autor": "Atsushi Nakajima",
+    "tema": "identidad"
+  },
+  {
+    "id": 24,
+    "texto": "Incluso el vino más fuerte se evapora bajo el sol del odio.",
+    "autor": "Chuuya Nakahara",
+    "tema": "pasión"
+  },
+  {
+    "id": 25,
+    "texto": "Si Dios no existe, todo está permitido.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 26,
+    "texto": "El cine es el espejo donde se refleja el alma moderna.",
+    "autor": "Otros",
+    "tema": "arte"
+  },
+  {
+    "id": 27,
+    "texto": "El enemigo más temido es el que se oculta bajo la piel del amor.",
+    "autor": "Amélie Nothomb",
+    "tema": "conflicto"
+  },
+  {
+    "id": 28,
+    "texto": "El cine es el espejo donde se refleja el alma moderna.",
+    "autor": "Otros",
+    "tema": "arte"
+  },
+  {
+    "id": 29,
+    "texto": "Caer una y otra vez es una danza que solo los necios entienden.",
+    "autor": "Chuuya Nakahara",
+    "tema": "rebeldía"
+  },
+  {
+    "id": 30,
+    "texto": "El alma se cura al estar con niños.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "esperanza"
+  },
+  {
+    "id": 31,
+    "texto": "Si Dios no existe, todo está permitido.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 32,
+    "texto": "Los Hijos del Sol son aquellos que portan luz en medio del abismo.",
+    "autor": "Genshin Impact",
+    "tema": "mitología"
+  },
+  {
+    "id": 33,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 34,
+    "texto": "Quiero morir… pero también quiero vivir intensamente.",
+    "autor": "Osamu Dazai",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 35,
+    "texto": "El infierno es un lugar que llevamos dentro.",
+    "autor": "Ryunosuke Akutagawa",
+    "tema": "tormento"
+  },
+  {
+    "id": 36,
+    "texto": "Incluso el vino más fuerte se evapora bajo el sol del odio.",
+    "autor": "Chuuya Nakahara",
+    "tema": "pasión"
+  },
+  {
+    "id": 37,
+    "texto": "Mi único talento es el de fracasar sin cesar.",
+    "autor": "Osamu Dazai",
+    "tema": "depresión"
+  },
+  {
+    "id": 38,
+    "texto": "Los Hijos del Sol son aquellos que portan luz en medio del abismo.",
+    "autor": "Genshin Impact",
+    "tema": "mitología"
+  },
+  {
+    "id": 39,
+    "texto": "El sufrimiento es la única causa de la conciencia.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "filosofía"
+  },
+  {
+    "id": 40,
+    "texto": "Mi existencia es mi mayor enemigo y también mi único aliado.",
+    "autor": "Atsushi Nakajima",
+    "tema": "identidad"
+  },
+  {
+    "id": 41,
+    "texto": "¿Qué es un sueño sino otra forma de existencia?",
+    "autor": "Otros",
+    "tema": "filosofía"
+  },
+  {
+    "id": 42,
+    "texto": "El horror no reside en los monstruos, sino en nosotros mismos.",
+    "autor": "Edogawa Rampo",
+    "tema": "psicológico"
+  },
+  {
+    "id": 43,
+    "texto": "El ser humano es una contradicción viviente.",
+    "autor": "Osamu Dazai",
+    "tema": "identidad"
+  },
+  {
+    "id": 44,
+    "texto": "Nada es verdad, todo está permitido.",
+    "autor": "Otros",
+    "tema": "libertad"
+  },
+  {
+    "id": 45,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 46,
+    "texto": "Incluso el vino más fuerte se evapora bajo el sol del odio.",
+    "autor": "Chuuya Nakahara",
+    "tema": "pasión"
+  },
+  {
+    "id": 47,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 48,
+    "texto": "La mente humana es un laberinto que ni el mejor detective puede resolver.",
+    "autor": "Edogawa Rampo",
+    "tema": "misterio"
+  },
+  {
+    "id": 49,
+    "texto": "La belleza del mundo solo puede ser vista por quienes sufren.",
+    "autor": "Ryunosuke Akutagawa",
+    "tema": "belleza"
+  },
+  {
+    "id": 50,
+    "texto": "El horror no reside en los monstruos, sino en nosotros mismos.",
+    "autor": "Edogawa Rampo",
+    "tema": "psicológico"
+  },
+  {
+    "id": 51,
+    "texto": "El alma se cura al estar con niños.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "esperanza"
+  },
+  {
+    "id": 52,
+    "texto": "Nada hay más corrosivo que el silencio entre dos que se conocen demasiado.",
+    "autor": "Amélie Nothomb",
+    "tema": "relaciones"
+  },
+  {
+    "id": 53,
+    "texto": "Toda historia tiene un abismo. Solo algunos personajes deciden saltar.",
+    "autor": "Otros",
+    "tema": "narrativa"
+  },
+  {
+    "id": 54,
+    "texto": "Caer una y otra vez es una danza que solo los necios entienden.",
+    "autor": "Chuuya Nakahara",
+    "tema": "rebeldía"
+  },
+  {
+    "id": 55,
+    "texto": "Mi único talento es el de fracasar sin cesar.",
+    "autor": "Osamu Dazai",
+    "tema": "depresión"
+  },
+  {
+    "id": 56,
+    "texto": "Mi existencia es mi mayor enemigo y también mi único aliado.",
+    "autor": "Atsushi Nakajima",
+    "tema": "identidad"
+  },
+  {
+    "id": 57,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 58,
+    "texto": "Mi único talento es el de fracasar sin cesar.",
+    "autor": "Osamu Dazai",
+    "tema": "depresión"
+  },
+  {
+    "id": 59,
+    "texto": "Nada hay más corrosivo que el silencio entre dos que se conocen demasiado.",
+    "autor": "Amélie Nothomb",
+    "tema": "relaciones"
+  },
+  {
+    "id": 60,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 61,
+    "texto": "Caer una y otra vez es una danza que solo los necios entienden.",
+    "autor": "Chuuya Nakahara",
+    "tema": "rebeldía"
+  },
+  {
+    "id": 62,
+    "texto": "La guerra me enseñó que vivir es ya una forma de resistencia.",
+    "autor": "Ango Sakaguchi",
+    "tema": "supervivencia"
+  },
+  {
+    "id": 63,
+    "texto": "Caer una y otra vez es una danza que solo los necios entienden.",
+    "autor": "Chuuya Nakahara",
+    "tema": "rebeldía"
+  },
+  {
+    "id": 64,
+    "texto": "La guerra me enseñó que vivir es ya una forma de resistencia.",
+    "autor": "Ango Sakaguchi",
+    "tema": "supervivencia"
+  },
+  {
+    "id": 65,
+    "texto": "Amélie miraba el mundo como si fuera una sinfonía de secretos.",
+    "autor": "Otros",
+    "tema": "fantasía"
+  },
+  {
+    "id": 66,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 67,
+    "texto": "La mente humana es un laberinto que ni el mejor detective puede resolver.",
+    "autor": "Edogawa Rampo",
+    "tema": "misterio"
+  },
+  {
+    "id": 68,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 69,
+    "texto": "El infierno es un lugar que llevamos dentro.",
+    "autor": "Ryunosuke Akutagawa",
+    "tema": "tormento"
+  },
+  {
+    "id": 70,
+    "texto": "Mi existencia es mi mayor enemigo y también mi único aliado.",
+    "autor": "Atsushi Nakajima",
+    "tema": "identidad"
+  },
+  {
+    "id": 71,
+    "texto": "El enemigo más temido es el que se oculta bajo la piel del amor.",
+    "autor": "Amélie Nothomb",
+    "tema": "conflicto"
+  },
+  {
+    "id": 72,
+    "texto": "La realidad es aquello que persiste incluso cuando dejas de creer en ella.",
+    "autor": "Otros",
+    "tema": "realidad"
+  },
+  {
+    "id": 73,
+    "texto": "Incluso el vino más fuerte se evapora bajo el sol del odio.",
+    "autor": "Chuuya Nakahara",
+    "tema": "pasión"
+  },
+  {
+    "id": 74,
+    "texto": "Nada hay más corrosivo que el silencio entre dos que se conocen demasiado.",
+    "autor": "Amélie Nothomb",
+    "tema": "relaciones"
+  },
+  {
+    "id": 75,
+    "texto": "Caer una y otra vez es una danza que solo los necios entienden.",
+    "autor": "Chuuya Nakahara",
+    "tema": "rebeldía"
+  },
+  {
+    "id": 76,
+    "texto": "El enemigo más temido es el que se oculta bajo la piel del amor.",
+    "autor": "Amélie Nothomb",
+    "tema": "conflicto"
+  },
+  {
+    "id": 77,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 78,
+    "texto": "Los Hijos del Sol son aquellos que portan luz en medio del abismo.",
+    "autor": "Genshin Impact",
+    "tema": "mitología"
+  },
+  {
+    "id": 79,
+    "texto": "Incluso el vino más fuerte se evapora bajo el sol del odio.",
+    "autor": "Chuuya Nakahara",
+    "tema": "pasión"
+  },
+  {
+    "id": 80,
+    "texto": "Si Dios no existe, todo está permitido.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 81,
+    "texto": "Si Dios no existe, todo está permitido.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 82,
+    "texto": "Amélie miraba el mundo como si fuera una sinfonía de secretos.",
+    "autor": "Otros",
+    "tema": "fantasía"
+  },
+  {
+    "id": 83,
+    "texto": "El infierno es un lugar que llevamos dentro.",
+    "autor": "Ryunosuke Akutagawa",
+    "tema": "tormento"
+  },
+  {
+    "id": 84,
+    "texto": "Quiero morir… pero también quiero vivir intensamente.",
+    "autor": "Osamu Dazai",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 85,
+    "texto": "Quiero morir… pero también quiero vivir intensamente.",
+    "autor": "Osamu Dazai",
+    "tema": "existencialismo"
+  },
+  {
+    "id": 86,
+    "texto": "El ser humano es una contradicción viviente.",
+    "autor": "Osamu Dazai",
+    "tema": "identidad"
+  },
+  {
+    "id": 87,
+    "texto": "La belleza del mundo solo puede ser vista por quienes sufren.",
+    "autor": "Ryunosuke Akutagawa",
+    "tema": "belleza"
+  },
+  {
+    "id": 88,
+    "texto": "Toda historia tiene un abismo. Solo algunos personajes deciden saltar.",
+    "autor": "Otros",
+    "tema": "narrativa"
+  },
+  {
+    "id": 89,
+    "texto": "Los Hijos del Sol son aquellos que portan luz en medio del abismo.",
+    "autor": "Genshin Impact",
+    "tema": "mitología"
+  },
+  {
+    "id": 90,
+    "texto": "El enemigo más temido es el que se oculta bajo la piel del amor.",
+    "autor": "Amélie Nothomb",
+    "tema": "conflicto"
+  },
+  {
+    "id": 91,
+    "texto": "Skirk dijo: bajo el océano no hay lágrimas, solo voluntad.",
+    "autor": "Genshin Impact",
+    "tema": "destino"
+  },
+  {
+    "id": 92,
+    "texto": "Nada hay más corrosivo que el silencio entre dos que se conocen demasiado.",
+    "autor": "Amélie Nothomb",
+    "tema": "relaciones"
+  },
+  {
+    "id": 93,
+    "texto": "La guerra me enseñó que vivir es ya una forma de resistencia.",
+    "autor": "Ango Sakaguchi",
+    "tema": "supervivencia"
+  },
+  {
+    "id": 94,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 95,
+    "texto": "El tigre que llevo dentro no ruge, pero observa.",
+    "autor": "Atsushi Nakajima",
+    "tema": "dualidad"
+  },
+  {
+    "id": 96,
+    "texto": "Incluso el vino más fuerte se evapora bajo el sol del odio.",
+    "autor": "Chuuya Nakahara",
+    "tema": "pasión"
+  },
+  {
+    "id": 97,
+    "texto": "El ser humano es una contradicción viviente.",
+    "autor": "Osamu Dazai",
+    "tema": "identidad"
+  },
+  {
+    "id": 98,
+    "texto": "La belleza del mundo solo puede ser vista por quienes sufren.",
+    "autor": "Ryunosuke Akutagawa",
+    "tema": "belleza"
+  },
+  {
+    "id": 99,
+    "texto": "El viaje sagrado es una ilusión tejida por el tiempo mismo.",
+    "autor": "Genshin Impact",
+    "tema": "realidad"
+  },
+  {
+    "id": 100,
+    "texto": "El alma se cura al estar con niños.",
+    "autor": "Fiódor Dostoyevski",
+    "tema": "esperanza"
+  },
+  {
+    "id": 101,
     "texto": "En el fondo del abismo también se encuentran las estrellas.",
     "autor": "Friedrich Nietzsche",
     "tema": "filosofía"
   },
   {
-    "id": 2,
+    "id": 102,
     "texto": "La palabra es la sombra del acto.",
     "autor": "Democritus",
     "tema": "filosofía"
   },
   {
-    "id": 3,
+    "id": 103,
     "texto": "No somos seres humanos teniendo una experiencia espiritual. Somos seres espirituales teniendo una experiencia humana.",
     "autor": "Pierre Teilhard de Chardin",
     "tema": "espiritualidad"
   },
   {
-    "id": 4,
+    "id": 104,
     "texto": "La imaginación es más importante que el conocimiento.",
     "autor": "Albert Einstein",
     "tema": "ciencia"
   },
   {
-    "id": 5,
+    "id": 105,
     "texto": "El que mira hacia afuera, sueña. El que mira hacia adentro, despierta.",
     "autor": "Carl Jung",
     "tema": "psicología"
   },
   {
-    "id": 6,
+    "id": 106,
     "texto": "No llores porque ya se terminó, sonríe porque sucedió.",
     "autor": "Dr. Seuss",
     "tema": "literatura"
   },
   {
-    "id": 7,
+    "id": 107,
     "texto": "La oscuridad no puede expulsar a la oscuridad; solo la luz puede hacerlo.",
     "autor": "Martin Luther King Jr.",
     "tema": "inspiración"
   },
   {
-    "id": 8,
+    "id": 108,
     "texto": "Somos lo que hacemos repetidamente. La excelencia, entonces, no es un acto sino un hábito.",
     "autor": "Aristóteles",
     "tema": "filosofía"
   },
   {
-    "id": 9,
+    "id": 109,
     "texto": "El misterio de la vida no es un problema a resolver, sino una realidad a experimentar.",
     "autor": "Frank Herbert",
     "tema": "literatura"
   },
   {
-    "id": 10,
+    "id": 110,
     "texto": "Ayer fui inteligente, así que quise cambiar el mundo. Hoy soy sabio, así que me estoy cambiando a mí mismo.",
     "autor": "Rumi",
     "tema": "espiritualidad"
   },
   {
-    "id": 11,
+    "id": 111,
     "texto": "La verdad no teme a la luz.",
     "autor": "William Shakespeare",
     "tema": "literatura"
   },
   {
-    "id": 12,
+    "id": 112,
     "texto": "Todo lo que somos es resultado de lo que hemos pensado.",
     "autor": "Buddha",
     "tema": "espiritualidad"
   },
   {
-    "id": 13,
+    "id": 113,
     "texto": "El conocimiento habla, pero la sabiduría escucha.",
     "autor": "Jimi Hendrix",
     "tema": "inspiración"
   },
   {
-    "id": 14,
+    "id": 114,
     "texto": "Lo que no nos mata, nos hace más fuertes.",
     "autor": "Friedrich Nietzsche",
     "tema": "filosofía"
   },
   {
-    "id": 15,
+    "id": 115,
     "texto": "El único viaje imposible es el que nunca comenzaste.",
     "autor": "Tony Robbins",
     "tema": "inspiración"

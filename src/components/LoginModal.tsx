@@ -6,6 +6,8 @@ import { Label } from './ui/label';
 import { useUserStore } from '../store/useUserStore';
 import { apiService } from '../services/api';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
+
 
 interface LoginModalProps {
   open: boolean;
@@ -63,7 +65,7 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
             className="bg-mystic-card border-border"
           />
         </div>
-        
+
         <div className="space-y-2">
           <Label htmlFor="password">Contraseña</Label>
           <Input
@@ -81,8 +83,8 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
         )}
 
         <div className="flex gap-2 pt-4">
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             disabled={isLoading}
             className={cn(
               "flex-1 bg-gradient-mystic hover:opacity-90",
@@ -99,11 +101,14 @@ export function LoginModal({ open, onOpenChange }: LoginModalProps) {
           >
             Cancelar
           </Button>
-        </div>
 
-        <div className="text-center text-sm text-muted-foreground">
-          Usuario demo: demo@citas.com / 123456
         </div>
+        <p className="text-sm text-muted-foreground text-center mt-4">
+          ¿No tienes cuenta?{' '}
+          <Link to="/registro" className="text-mystic-purple hover:text-mystic-gold transition-colors">
+            Regístrate aquí
+          </Link>
+        </p>
       </form>
     </Modal>
   );

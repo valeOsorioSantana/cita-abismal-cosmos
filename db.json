@@ -1,0 +1,72 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Usuario Demo",
+      "email": "demo@citas.com",
+      "password": "123456",
+      "favoritos": [
+        1,
+        5,
+        9,
+        112,
+        105
+      ]
+    },
+    {
+      "id": 1752333331922,
+      "nombre": "Ximena",
+      "email": "ximena@gmail.com",
+      "password": "123456",
+      "favoritos": []
+    },
+    {
+      "id": 1752346033741,
+      "nombre": "Anie",
+      "email": "anie@gmail.com",
+      "password": "123456",
+      "favoritos": [
+        109,
+        53,
+        80,
+        11
+      ]
+    },
+    {
+      "id": 1752349404722,
+      "nombre": "juan",
+      "email": "juan@gmail.com",
+      "password": "123456",
+      "favoritos": []
+    },
+    {
+      "id": 1752352826165,
+      "nombre": "Carlitos",
+      "email": "carlitos@gmail.com",
+      "password": "123456",
+      "favoritos": []
+    },
+    {
+      "nombre": "Mari",
+      "email": "ximenadelgadom07@gmail.com",
+      "password": "123456",
+      "favoritos": [
+        3,
+        112,
+        4
+      ],
+      "id": 1752361993331
+    },
+    {
+      "nombre": "emilia",
+      "email": "emilia@ejemplo.com",
+      "password": "123456",
+      "favoritos": [
+        83,
+        22,
+        50
+      ],
+      "id": 1752525454857
+    }
+  ]
+}

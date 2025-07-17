@@ -5,6 +5,7 @@ import { Card } from './ui/card';
 import { useUserStore } from '../store/useUserStore';
 import { LoginModal } from './LoginModal';
 import type { Frase } from '../types';
+import { apiService } from '../services/api';
 import { cn } from '@/lib/utils';
 
 interface FraseCardProps {
@@ -15,16 +16,26 @@ interface FraseCardProps {
 
 export function FraseCard({ frase, onNuevaFrase, isLoading }: FraseCardProps) {
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const { usuario, isLoggedIn, addFavorito } = useUserStore();
+  const { usuario, isLoggedIn } = useUserStore();
 
   const isFavorita = usuario?.favoritos.includes(frase.id) || false;
 
-  const handleGuardar = () => {
-    if (!isLoggedIn) {
+  const handleToggleFavorito = async () => {
+    if (!isLoggedIn || !usuario) {
       setShowLoginModal(true);
       return;
     }
-    addFavorito(frase.id);
+
+    try {
+      const nuevosFavoritos = isFavorita
+        ? usuario.favoritos.filter(id => id !== frase.id)
+        : [...usuario.favoritos, frase.id];
+
+      const usuarioActualizado = await apiService.updateFavoritos(usuario.id, nuevosFavoritos);
+      useUserStore.getState().setUsuario(usuarioActualizado);
+    } catch (err) {
+      console.error("Error al actualizar favorito:", err);
+    }
   };
 
   const getThemeColor = (tema: string) => {
@@ -82,26 +93,28 @@ export function FraseCard({ frase, onNuevaFrase, isLoading }: FraseCardProps) {
             </Button>
 
             <Button
-              onClick={handleGuardar}
+              onClick={handleToggleFavorito}
               variant="outline"
-              disabled={isFavorita}
               className={cn(
                 "border-mystic-purple text-mystic-purple",
                 "hover:bg-mystic-purple hover:text-white",
-                "transition-all duration-200",
-                isFavorita && "bg-mystic-purple text-white opacity-70"
+                "transition-all duration-200 relative overflow-hidden",
+                isFavorita && "bg-mystic-purple text-white"
               )}
             >
-              <Heart className={cn("mr-2 h-4 w-4", isFavorita && "fill-current")} />
+              <Heart className={cn(
+                "mr-2 h-4 w-4 transition-transform duration-200",
+                isFavorita && "fill-current"
+              )} />
               {isFavorita ? 'Guardada' : 'Guardar'}
             </Button>
           </div>
         </div>
       </Card>
 
-      <LoginModal 
-        open={showLoginModal} 
-        onOpenChange={setShowLoginModal} 
+      <LoginModal
+        open={showLoginModal}
+        onOpenChange={setShowLoginModal}
       />
     </>
   );

@@ -6,28 +6,58 @@ import { Button } from '../components/ui/button';
 import { apiService } from '../services/api';
 import { useUserStore } from '../store/useUserStore';
 import type { Frase } from '../types';
-import { cn } from '@/lib/utils';
 
 export default function Inicio() {
-  const [frase, setFrase] = useState<Frase | null>(null);
+  const [frases, setFrases] = useState<Frase[]>([]);
+  const [fraseActual, setFraseActual] = useState<Frase | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { usuario, isLoggedIn, logout } = useUserStore();
+  const { usuario, isLoggedIn, logout, setUsuario } = useUserStore();
 
-  const cargarFraseAleatoria = async () => {
-    setIsLoading(true);
-    try {
-      const nuevaFrase = await apiService.getFraseAleatoria();
-      setFrase(nuevaFrase);
-    } catch (error) {
-      console.error('Error al cargar frase:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+
 
   useEffect(() => {
-    cargarFraseAleatoria();
+    const usuarioGuardado = localStorage.getItem('usuario');
+    if (usuarioGuardado) {
+      try {
+        setUsuario(JSON.parse(usuarioGuardado));
+      } catch (error) {
+        console.error('Error leyendo usuario desde localStorage:', error);
+      }
+    }
+  },[setUsuario]);
+
+
+  // Cargar todas las frases una vez al inicio
+  useEffect(() => {
+    const cargarFrases = async () => {
+      setIsLoading(true);
+      try {
+        const todas = await apiService.getFrases(); // ← frases.json
+        setFrases(todas);
+
+        const random = todas[Math.floor(Math.random() * todas.length)];
+        setFraseActual(random);
+      } catch (error) {
+        console.error('Error al cargar frases:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    cargarFrases();
   }, []);
+
+  // Función para mostrar otra frase aleatoria (evita repetir la misma)
+  const handleNuevaFrase = () => {
+    if (frases.length === 0) return;
+
+    let nueva;
+    do {
+      nueva = frases[Math.floor(Math.random() * frases.length)];
+    } while (nueva.id === fraseActual?.id && frases.length > 1);
+
+    setFraseActual(nueva);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-cosmic">
@@ -35,9 +65,9 @@ export default function Inicio() {
       <header className="border-b border-border backdrop-blur-sm bg-background/10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="font-serif text-xl font-bold text-mystic-gold">
-            Citas que Inspiran
+            Susurros del Abismo
           </Link>
-          
+
           <nav className="flex items-center gap-4">
             <Link to="/">
               <Button variant="ghost" size="sm">
@@ -45,14 +75,14 @@ export default function Inicio() {
                 Inicio
               </Button>
             </Link>
-            
+
             <Link to="/grimorio">
               <Button variant="ghost" size="sm">
                 <Book className="mr-2 h-4 w-4" />
                 Grimorio
               </Button>
             </Link>
-            
+
             <Link to="/juego">
               <Button variant="ghost" size="sm">
                 <Gamepad2 className="mr-2 h-4 w-4" />
@@ -66,9 +96,9 @@ export default function Inicio() {
                   <User className="mr-1 h-3 w-3" />
                   {usuario?.nombre}
                 </span>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
+                <Button
+                  variant="ghost"
+                  size="sm"
                   onClick={logout}
                   className="text-destructive hover:text-destructive"
                 >
@@ -98,10 +128,10 @@ export default function Inicio() {
           </p>
         </div>
 
-        {frase ? (
-          <FraseCard 
-            frase={frase} 
-            onNuevaFrase={cargarFraseAleatoria}
+        {fraseActual ? (
+          <FraseCard
+            frase={fraseActual}
+            onNuevaFrase={handleNuevaFrase}
             isLoading={isLoading}
           />
         ) : (
