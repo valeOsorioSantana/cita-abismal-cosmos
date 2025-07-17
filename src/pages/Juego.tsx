@@ -7,6 +7,9 @@ import { apiService } from '../services/api';
 import type { Frase } from '../types';
 import { cn } from '@/lib/utils';
 import triviaCarImage from '../assets/trivia-cat.png';
+import gatoFeliz from '../assets/feliz.png';
+import gatoConfundido from '../assets/Confundido.png';
+import gatoEnojado from '../assets/enojao.png';
 
 interface OpcionRespuesta {
   autor: string;
@@ -20,7 +23,8 @@ export default function Juego() {
   const [mostrarResultado, setMostrarResultado] = useState(false);
   const [puntuacion, setPuntuacion] = useState({ correctas: 0, total: 0 });
   const [isLoading, setIsLoading] = useState(false);
-  const [catExpression, setCatExpression] = useState<'thinking' | 'happy' | 'sad' | 'neutral'>('neutral');
+  const [catExpression, setCatExpression] = useState<'neutral' | 'happy' | 'sad' | 'angry'>('neutral');
+  const [erroresConsecutivos, setErroresConsecutivos] = useState(0);
 
   const autoresAlternativos = [
     'Oscar Wilde', 'Virginia Woolf', 'Mark Twain', 'Maya Angelou',
@@ -33,7 +37,7 @@ export default function Juego() {
     setIsLoading(true);
     setRespuestaSeleccionada(null);
     setMostrarResultado(false);
-    setCatExpression('thinking');
+    setCatExpression('neutral');
 
     try {
       const nuevaFrase = await apiService.getFraseAleatoria();
@@ -74,12 +78,16 @@ export default function Juego() {
       total: prev.total + 1
     }));
 
+    // Reinicia errores consecutivos si es correcta, suma si es incorrecta
+    setErroresConsecutivos(prev => esCorrecta ? 0 : prev + 1);
+
     // Cambiar expresión del gato según la respuesta
     setCatExpression(esCorrecta ? 'happy' : 'sad');
   };
 
   const reiniciarJuego = () => {
     setPuntuacion({ correctas: 0, total: 0 });
+    setErroresConsecutivos(0);
     setCatExpression('neutral');
     cargarNuevaFrase();
   };
@@ -87,6 +95,14 @@ export default function Juego() {
   useEffect(() => {
     cargarNuevaFrase();
   }, []);
+
+  useEffect(() => {
+    if (erroresConsecutivos > 4) {
+      setCatExpression('angry');
+    } else if (catExpression === 'angry') {
+      setCatExpression('neutral');
+    }
+  }, [erroresConsecutivos, catExpression]);
 
   const getThemeColor = (tema: string) => {
     const themes = {
@@ -100,15 +116,23 @@ export default function Juego() {
     return themes[tema as keyof typeof themes] || 'text-muted-foreground';
   };
 
-  const porcentajeAciertos = puntuacion.total > 0 
-    ? Math.round((puntuacion.correctas / puntuacion.total) * 100) 
+  const porcentajeAciertos = puntuacion.total > 0
+    ? Math.round((puntuacion.correctas / puntuacion.total) * 100)
     : 0;
+
+  const catImageMap: Record<typeof catExpression, string> = {
+    happy: gatoFeliz,
+    sad: gatoConfundido,
+    neutral: triviaCarImage,
+    angry: gatoEnojado,
+  };
+
 
   const getCatMessage = () => {
     if (catExpression === 'happy') return '¡Perfecto! 🎉';
     if (catExpression === 'sad') return 'Mmm... no era esa 🤔';
-    if (catExpression === 'thinking') return 'Pensando...';
-    return '¿Quién dijo esta frase?';
+    if (catExpression === 'angry') return '¡Ya van muchas malas! 😾';
+    if (catExpression === 'neutral') return '';
   };
 
   return (
@@ -153,7 +177,7 @@ export default function Juego() {
         {isLoading ? (
           <div className="max-w-2xl mx-auto">
             <Card className="p-8 bg-gradient-cosmic border-border">
-              <div className="animate-pulse space-y-6">
+              <div className="animate-none space-y-6">
                 <div className="h-6 bg-muted rounded w-3/4 mx-auto"></div>
                 <div className="h-4 bg-muted rounded w-1/2 mx-auto"></div>
                 <div className="space-y-3">
@@ -198,24 +222,26 @@ export default function Juego() {
 
               {/* Gato */}
               <div className="relative">
-                <img 
-                  src={triviaCarImage} 
-                  alt="Gato trivia" 
+                <img
+                  src={catImageMap[catExpression]}
+                  alt={`Gato ${catExpression}`}
                   className={cn(
                     "w-32 h-32 object-contain transition-all duration-300",
                     catExpression === 'happy' && "animate-bounce",
                     catExpression === 'sad' && "grayscale",
-                    catExpression === 'thinking' && "animate-pulse"
+                    catExpression === 'neutral' && "animate-none"
                   )}
                 />
+
                 {/* Mensaje del gato */}
                 <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
                   <div className={cn(
-                    "px-3 py-1 rounded-full text-sm font-medium transition-all duration-300",
-                    "bg-muted/80 border border-border backdrop-blur-sm",
-                    catExpression === 'happy' && "bg-green-500/20 text-green-400 border-green-500/30",
-                    catExpression === 'sad' && "bg-red-500/20 text-red-400 border-red-500/30",
-                    catExpression === 'thinking' && "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+                    "rounded-full font-medium transition-all duration-300",
+                    "bg-muted/90 border border-border backdrop-blur-sm",
+                    catExpression === 'happy' && "px-3 py-1 text-sm bg-green-500/20 text-green-400 border-green-500/30",
+                    catExpression === 'sad' && "px-8 py-1 text-xs min-w-[195px] max-w-[800px] whitespace-normal bg-red-500/20 text-red-400 border-red-500/30",
+                    catExpression === 'angry' && "px-10 py-1 text-xs min-w-[235px] text-red-300 bg-red-500/10 border-red-500/30",
+                    catExpression === 'neutral' && "px-3 py-1 text-sm bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
                   )}>
                     {getCatMessage()}
                   </div>
@@ -230,7 +256,7 @@ export default function Juego() {
                   const isSelected = respuestaSeleccionada === opcion.autor;
                   const showResult = mostrarResultado;
                   const isCorrect = opcion.correcta;
-                  
+
                   let buttonVariant: "default" | "outline" | "destructive" = "outline";
                   let extraClasses = "";
 
@@ -281,7 +307,7 @@ export default function Juego() {
                     }
                   </div>
 
-                  <Button 
+                  <Button
                     onClick={cargarNuevaFrase}
                     className="bg-gradient-mystic hover:opacity-90"
                   >
