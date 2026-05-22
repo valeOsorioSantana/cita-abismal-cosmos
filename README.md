@@ -158,6 +158,13 @@ Este proyecto fue desarrollado como práctica para fortalecer conocimientos en:
 
 ---
 
+## 👩‍💻 Autores
+
+**Valeria Andrea Osorio Santana**
+**Maria Ximena Marin**
+
+---
+
 ## 📄 Licencia
 
 Proyecto desarrollado con fines educativos y de aprendizaje.
