@@ -160,8 +160,7 @@ Este proyecto fue desarrollado como práctica para fortalecer conocimientos en:
 
 ## 👩‍💻 Autores
 
-**Valeria Andrea Osorio Santana**
-**Maria Ximena Marin**
+Desarrollado por **Valeria Andrea Osorio Santana** y **Maria Ximena Marin**.
 
 ---
 
